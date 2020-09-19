@@ -1,0 +1,198 @@
+body {
+  background-color: #FDFBF7;
+  font-family: sans-serif;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'btOverView    inventoryST maintains'
+  'graphs        ptime       ptime'
+  'graphs        buttons     buttons'
+  'graphs        abort       abort';
+}
+
+.grid-container > div {
+  background-color: #C4C4C4;
+}
+
+
+.sidenav {
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #525252;
+  overflow-x: hidden;
+  padding-top: 83px;
+  width: 70px;
+}
+.sidenav > .iconify {
+  border: solid 2px;
+  box-sizing: border-box;
+  font-size: 40px;
+  margin: 7px;
+  color: #BDBDBD;
+}
+
+
+header {
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  margin: 0px 50px 50px 0px;
+  background-color: #FDFBF7;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #388DA6;
+  box-sizing: border-box;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > div {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+header > h2 {
+  margin: 0px 0px 0px 55px;
+}
+
+
+.batch {
+  display:flex;
+  justify-content: left;
+}
+
+.batch > p {
+  display: flex;
+  font-size: 15px;
+  margin: 0px 20px 0px 30px;
+  color: #525252;
+}
+
+
+.main {
+  margin: 55px 0px 0px 75px;
+}
+
+.btOverView {
+  grid-area: btOverView;
+  margin: 5px;
+}
+.btOvRow {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap ;
+
+}
+.btOvRow > div {
+  background-color: #D4D4D4;
+  color: #000;
+  margin: 10px 10px 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 130px;
+  padding: 3px;
+}
+.inventoryST {
+  grid-area: inventoryST;
+  margin: 5px;
+}
+.maintains {
+  grid-area: maintains;
+  margin: 5px;
+}
+.graphs {
+  grid-area: graphs;
+  margin: 5px;
+  display:flex;
+  flex-direction: row;
+}
+.graphs-left {
+  width: 45px;
+  position: relative;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.graphs-left > p {
+  position: absolute;
+  bottom: 100px;
+  left: 15px;
+  width: 215px;
+  transform: rotate(270deg);
+  transform-origin: 0 0;
+}
+.graphs-top {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.graphs-top > p {
+  color: blue;
+}
+
+#graphs {
+  background-color: #DDDDDD;
+  margin-bottom: 45px;
+  margin-right: 20px;
+}
+.ptime {
+  grid-area: ptime;
+  margin: 5px;
+}
+.buttons {
+  grid-area: buttons;
+  margin: 5px;
+}
+.abort {
+  grid-area: abort;
+  margin: 5px;
+}
+
+.marked {
+  background-color: #388DA6 !important;
+  color: #FFF !important;
+}
+
+.button {
+  align-items: center;
+  display: inline-block;
+  margin: 5px;
+  padding:5px;
+  background-color: #dcdcdc;
+  border: 1px solid #666;
+  border-radius: 10px;
+  color:#000;
+  text-decoration:none;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  transition: 0.2s;
+}
+.button:hover {
+  background-color: #ccc;
+  transition: 0.1s;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.01);
+}
+.button:active {
+  background-color: #aaa;
+  transition: 0.1s;
+}
+
