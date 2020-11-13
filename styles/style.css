@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+.main {
+  margin: 60px auto;
+}
+
 .grid-container {
   display: grid;
   grid-template-areas: 
@@ -96,9 +100,6 @@ header > h2 {
   padding-left: 20px;
 }
 
-.main {
-  margin: 55px 0px 0px 75px;
-}
 
 .btOverView {
   grid-area: btOverView;
