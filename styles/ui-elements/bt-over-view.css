@@ -8,6 +8,7 @@
 .btOverView > div {
   background-color: #D4D4D4;
   margin: 20px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,11 +21,12 @@
 }
 
 .btOV-child {
-    margin 5px;
     color: blue;
+    font-size: 16px;
 }
 .btOV-child > p:last-child{
     margin: 0;
     color: red;
     font-weight: bold;
+    font-size: 28px;
 }
