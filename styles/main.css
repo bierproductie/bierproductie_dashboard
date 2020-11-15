@@ -4,11 +4,11 @@
 @import url("header.css");
 
 /* UI elements*/
-@import url("ui-elements/ptime.css");
 @import url("ui-elements/maintain.css");
 @import url("ui-elements/bt-over-view.css");
 @import url("ui-elements/inventory.css");
 @import url("ui-elements/graphs.css");
+@import url("ui-elements/production-control.css");
 
 
 
