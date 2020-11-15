@@ -13,3 +13,30 @@
 .ptime > div:first-of-type{
   font-weight: 400;
 }
+
+.buttons {
+  grid-area: buttons;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-gap: 8px 13px; 
+  padding: 13px;
+}
+.buttons > button {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.abort {
+  grid-area: abort;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.abort > button {
+  background-color: #E42F2F;
+  color: #000;
+  font-size: 36px;
+  font-weight: 700;
+}
+
