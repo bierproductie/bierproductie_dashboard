@@ -1,0 +1,47 @@
+.inventory-st {
+    min-width: 360px;
+    padding: 10px;
+    display: block;
+}
+.inventory-top  {
+    color:black;
+    display: flex;
+    justify-content: center;
+}
+
+.inventory-container {
+    color:black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.inventory-inner {
+    width: 92%;
+    padding: 4%;
+    color:black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.inventory-inner > div {
+    background-color: #0AAE41;
+    width: 50%;
+    height: 50px;
+}
+
+.BARLEY > div {
+    background-color: #F3AE27;
+    width: 20%;
+}
+
+.inventory-inner > div:nth-child(2n) {
+    background-color: #DDDDDD;
+    width: 50%;
+}
+
+.BARLEY > div:nth-child(2n) {
+    background-color: #DDD;
+    width: 80%;
+}

@@ -1,0 +1,30 @@
+.btOverView {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 828px;
+}
+
+.btOverView > div {
+  background-color: #D4D4D4;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 130px;
+}
+.icon-btOverView {
+  font-size: 45px;
+}
+
+.btOV-child {
+    margin 5px;
+    color: blue;
+}
+.btOV-child > p:last-child{
+    margin: 0;
+    color: red;
+    font-weight: bold;
+}

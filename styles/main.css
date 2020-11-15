@@ -1,0 +1,45 @@
+/* page root */
+@import url("main-page-style.css");
+@import url("button.css");
+@import url("header.css");
+
+/* UI elements*/
+@import url("ui-elements/ptime.css");
+@import url("ui-elements/maintain.css");
+@import url("ui-elements/bt-over-view.css");
+@import url("ui-elements/inventory.css");
+@import url("ui-elements/graphs.css");
+
+
+
+.buttons {
+  grid-area: buttons;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-gap: 8px 13px; 
+  padding: 13px;
+}
+.buttons > button {
+  /* margin: 15px 0px 0px 15px; */
+  /* width: 195px; */
+  /* height: 105px; */
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.abort {
+  grid-area: abort;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.abort > button {
+  background-color: #E42F2F;
+  color: #000;
+  font-size: 36px;
+  font-weight: 700;
+  /* height: 70px; */
+  /* width: 410px; */
+}
+

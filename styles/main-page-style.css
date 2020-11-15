@@ -1,0 +1,57 @@
+@font-face {
+  font-family: robofont;
+}
+body {
+  background-color: #FDFBF7;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+.main {
+    padding-top: 60px;
+    padding-left: 80px;
+    padding-right: 10px;
+}
+
+.grid-container {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.grid-container > div {
+  background-color: #C4C4C4;
+  margin: 5px;
+}
+
+
+.sidenav {
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #525252;
+  overflow-x: hidden;
+  padding-top: 83px;
+  width: 70px;
+}
+.sidenav > .iconify {
+  border: solid 2px;
+  box-sizing: border-box;
+  font-size: 40px;
+  margin: 7px;
+  color: #BDBDBD;
+}
+
+.marked {
+  background-color: #388DA6 !important;
+  color: #FFF !important;
+}
+
+.marked-page {
+  background-color: #388DA6 !important;
+  color: #FFF !important;
+}

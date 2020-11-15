@@ -1,0 +1,15 @@
+.ptime {
+  border-bottom: solid 7px #0AAE41;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.ptime > div:first-of-type{
+  font-weight: 400;
+}
