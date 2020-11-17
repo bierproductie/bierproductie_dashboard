@@ -1,5 +1,6 @@
 .inventory-st {
-    min-width: 360px;
+    max-width: 360px;
+    width: 100%;
     padding: 10px;
     display: block;
 }
@@ -17,23 +18,19 @@
 }
 
 .inventory-inner {
-    width: 92%;
-    padding: 4%;
     color:black;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    padding-bottom: 10px;
+}
+.inventory-inner > div {
 }
 
-.inventory-inner > div {
+.inventory-inner > div:first-child {
     background-color: #0AAE41;
     width: 50%;
     height: 50px;
-}
-
-.BARLEY > div {
-    background-color: #F3AE27;
-    width: 20%;
 }
 
 .inventory-inner > div:nth-child(2n) {
@@ -41,7 +38,25 @@
     width: 50%;
 }
 
-.BARLEY > div:nth-child(2n) {
-    background-color: #DDD;
-    width: 80%;
+.inventory-overlay {
+    position: relative;
+    width: 100%;
+    top: -50px;
+    display: flex;
+    /* background-color: yellow; */
+    margin: 0px;
+}
+
+.inventory-overlay > p {
+    height: 0;
+}
+
+.inventory-overlay > p:first-child {
+    color: red;
+    margin: 10px auto;
+}
+
+.inventory-overlay > p:last-child {
+    color: blue;
+    margin: 10px auto;
 }
