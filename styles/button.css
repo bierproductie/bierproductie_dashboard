@@ -1,6 +1,6 @@
 button {
   background-color: #DDDDDD;
-  border: none;
+  border: 2px solid rgba(255,255,255,0);
   color: #000000;
   text-decoration:none;
   text-align: center;
