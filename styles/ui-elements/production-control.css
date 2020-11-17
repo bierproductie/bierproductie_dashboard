@@ -1,42 +1,57 @@
-.ptime {
-  border-bottom: solid 7px #0AAE41;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  font-weight: 700;
-  padding: 10px;
+.production-control {
+    max-width: 405px;
+    width: 100%;
+    background-color: #FDFBF7 !important;
 }
 
-.ptime > div:first-of-type{
-  font-weight: 400;
+.production-control > div {
+    background-color: #C4C4C4;
+    margin-bottom: 10px;
+}
+
+.ptime {
+    border-bottom: solid 7px #0AAE41;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    min-height: 50px;
+}
+
+.ptime > div:first-of-type {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.ptime > div:last-child {
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .buttons {
-  grid-area: buttons;
-  display: grid;
-  grid-template-columns: 1fr 1fr ;
-  grid-gap: 8px 13px; 
-  padding: 13px;
+    background-color: #C4C4C4;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 10px;
+    padding: 10px;
+    min-height: 150px;
+    min-width: 200px;
+    width: 100% auto;
 }
 .buttons > button {
-  font-size: 24px;
-  font-weight: 700;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .abort {
-  grid-area: abort;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+    padding: 10px;
+    width: 100% auto;
 }
 .abort > button {
-  background-color: #E42F2F;
-  color: #000;
-  font-size: 36px;
-  font-weight: 700;
+    width: 100%;
+    background-color: #E42F2F;
+    color: #000;
+    font-size: 36px;
+    font-weight: 700;
 }
-
