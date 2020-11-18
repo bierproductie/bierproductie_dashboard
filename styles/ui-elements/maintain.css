@@ -1,25 +1,26 @@
 .maintains{
-    min-height: 200px;
+    min-height: 290px;
+    width: 37px;
     padding: 10px;
     display: block;
 }
 #maintains-container{
-    height: 80%;
+    height: 90%;
 }
 
-#maintains-container > div:first-of-type{
-    height: 30%; 
+#maintains-container > div:first-child {
+    height: 50%; 
     background-color: #D4D4D4;
 } 
 
 #maintains-container > div:last-child{
-    height: 70%; 
+    height: 50%; 
     background-color:green;
 }
 
 #maintains-bottom{
   display: flex;
-  height: 20%;
+  margin-top: 20%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -28,6 +29,14 @@
 #maintains-bottom > .iconify {
     justify-content: center;
     align-items: center;
+    height: 10%;
     color: #525252;
     font-size: 30px;
+}
+
+.maintain-overlay {
+    position: relative;
+    height: 0;
+    left: 3px;
+    top: -20px;
 }
