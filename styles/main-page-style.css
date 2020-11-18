@@ -56,4 +56,5 @@ body {
 .marked-page {
   background-color: #388DA6 !important;
   color: #FFF !important;
+  border: none !important;
 }
