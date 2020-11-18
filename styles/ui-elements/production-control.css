@@ -58,3 +58,8 @@
     font-size: 36px;
     font-weight: 700;
 }
+
+.abort > button:active {
+  background-color: #EF0101;
+  transition: 0.01s;
+}
