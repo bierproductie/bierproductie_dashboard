@@ -14,10 +14,10 @@ function buttonFac(name){
 }
 
 buttonFac('temp');
-buttonFac('state');
+// buttonFac('state');
+// buttonFac('productsPerMin');
+// buttonFac('amountToProduce');
 buttonFac('humidity');
-buttonFac('productsPerMin');
-buttonFac('amountToProduce');
 buttonFac('acceptableProducts');
 buttonFac('vibration');
 buttonFac('DefectProducts');

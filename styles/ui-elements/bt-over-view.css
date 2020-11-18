@@ -1,7 +1,7 @@
 .btOverView {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px 10px;
   padding: 10px;
   max-width: 806px;
   min-width: 140px;
@@ -12,11 +12,12 @@
   background-color: #D4D4D4;
   color: black;
   padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 230px;
+  max-width: 260px;
   min-width: 100px;
   width: 100%;
   max-height: 130px;
