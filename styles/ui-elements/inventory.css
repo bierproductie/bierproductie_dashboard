@@ -1,0 +1,62 @@
+.inventory-st {
+    max-width: 360px;
+    width: 100%;
+    padding: 10px;
+    display: block;
+}
+.inventory-top  {
+    color:black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.inventory-container {
+    color:black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.inventory-inner {
+    color:black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-bottom: 10px;
+}
+.inventory-inner > div {
+}
+
+.inventory-inner > div:first-child {
+    background-color: #0AAE41;
+    width: 50%;
+    height: 50px;
+}
+
+.inventory-inner > div:nth-child(2n) {
+    background-color: #DDDDDD;
+    width: 50%;
+}
+
+.inventory-overlay {
+    position: relative;
+    width: 100%;
+    top: -50px;
+    display: flex;
+    /* background-color: yellow; */
+    margin: 0px;
+    color: black;
+}
+
+.inventory-overlay > p {
+    height: 0;
+}
+
+.inventory-overlay > p:first-child {
+    margin: 10px auto;
+}
+
+.inventory-overlay > p:last-child {
+    margin: 10px auto;
+}

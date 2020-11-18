@@ -1,0 +1,17 @@
+button {
+  background-color: #DDDDDD;
+  border: 2px solid rgba(255,255,255,0);
+  color: #000000;
+  text-decoration:none;
+  text-align: center;
+  transition: 0.01s;
+}
+button:hover {
+  border: solid 2px #388DA6;
+  transition: 0.01s;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.01);
+}
+button:active {
+  background-color: #aaa;
+  transition: 0.01s;
+}

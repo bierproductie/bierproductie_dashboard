@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bierproductie: Info Pages</title>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/maintain.js" defer></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Side navigation -->
+    <div class="sidenav">
+      <span class="iconify marked-page" onclick="location.href='';" data-icon="cil:touch-app" data-inline="false">
+      </span>
+      <span class="iconify" onclick="location.href='settings.html';" data-icon="carbon:settings" data-inline="false">
+      </span>
+    </div>
+
+    <!-- topbar -->
+    <header>       
+      <h2>Bierproductie</h2>
+      <div class="batch">
+        <p id="batch">BATCH</p>
+        <div>
+          <input class="batchNr" type="text" size="4" value="3425">
+          <div class="custom-select" style="width:60px;">
+            <p id="batchNr"></p>
+            <div class="select-items select-hide">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN PAGE START HERE -->
+    <div class="main">
+      <div class="grid-container">
+
+        <!-- MainButtonOverView -->
+        <div class="btOverView">
+          <div class="temp btOV-child">
+            <span class="iconify icon-btOverView" data-icon="raphael:temp"> </span>
+            <p>TEMPERATURE</p>
+            <p>25.0</p>
+          </div>
+          <div class="state btOV-child">
+            <span class="iconify icon-btOverView" data-icon="mdi:state-machine"> </span>
+            <p>STATE</p>
+            <p>RUNNING</p>
+          </div>
+          <div class="produced btOV-child">
+            <span class="iconify icon-btOverView" data-icon="la:wine-bottle-solid"> </span>
+            <p>PRODUCED</p>
+            <p>266</p>
+          </div>
+          <div class="humidity btOV-child">
+            <span class="iconify icon-btOverView" data-icon="carbon:rain-drop"> </span>
+            <p>HUNIDITY</p>
+            <p>49.0</p>
+          </div>
+          <div class="amountToProduce btOV-child">
+            <span class="iconify icon-btOverView" data-icon="fa-solid:faucet"> </span>
+            <p>AMOUNT TO PRODUCE</p>
+            <p>6000</p>
+          </div>
+          <div class="acceptableProducts btOV-child">
+            <span class="iconify icon-btOverView" data-icon="bx:bx-check"> </span>
+            <p>ACCEPTABLE PRODUCTS</p>
+            <p>223</p>
+          </div>
+          <div class="vibration btOV-child">
+            <span class="iconify icon-btOverView" data-icon="zmdi:vibration"></span>
+            <p>VIBRATION</p>
+            <p>0.0</p>
+          </div>
+          <div class="productsPerMin marked btOV-child">
+            <span class="iconify icon-btOverView" data-icon="cil:speedometer"> </span>
+            <p>PRODUCTS PER MINUTE</p>
+            <p>300</p>
+          </div>
+          <div class="DefectProducts btOV-child">
+            <span class="iconify icon-btOverView" data-icon="bi:x"> </span>
+            <p>DEFECT PRODUCTS</p>
+            <p>43</p>
+          </div>
+        </div>
+
+        <!-- Inventory of the beer machine -->
+        <div class="inventory-st">
+          <div class="inventory-top">
+            <p>INVENTORY STATUS</p>
+          </div>
+          <div class="inventory-container">
+            <div class="BARLEY inventory-inner">
+              <div></div>
+              <div></div>
+              <div class="BARLEY inventory-overlay">
+                <p>BARLEY</p>
+                <p>0.100KG</p>
+              </div>
+            </div>
+            <div class="MALT inventory-inner">
+              <div></div>
+              <div></div>
+              <div class="MALT inventory-overlay">
+                <p>MALT</p>
+                <p>0.100KG</p>
+              </div>
+            </div>
+            <div class="HOPS inventory-inner">
+              <div></div>
+              <div></div>
+              <div class="HOPS inventory-overlay">
+                <p>HOPS</p>
+                <p>0.100KG</p>
+              </div>
+            </div>
+            <div class="WHEAT inventory-inner">
+              <div></div>
+              <div></div>
+              <div class="WHEAT inventory-overlay">
+                <p>WHEAT</p>
+                <p>0.100KG</p>
+              </div>
+            </div>
+            <div class="YEAST inventory-inner">
+              <div></div>
+              <div></div>
+              <div class="YEAST inventory-overlay">
+                <p>YEAST</p>
+                <p>0.100KG</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- maintain info -->
+        <div class="maintains">
+          <div id="maintains-container">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="maintain-overlay">
+            <div>50%</div>
+          </div>
+          <div id="maintains-bottom">
+            <!-- <p>100%</p> -->
+            <span class="iconify" data-icon="mdi:wrench"></span>
+          </div>
+        </div>
+
+        <!-- graph view -->
+        <div class="graphs">
+          <div class="graphs-left">
+            <p>50 PRODUCTS/MIN</p>
+          </div>
+          <div class="graphs-right">
+            <div class="graphs-top"><p>this is top graphs</p></div>
+            <canvas id="graphs"></canvas>
+          </div>
+        </div>
+
+        <!-- production control -->
+        <div class=production-control>
+          <div class="ptime">
+            <div>ALE PRODUCTION</div>
+            <div>00:11:52</div>
+          </div>
+          <div class="buttons">
+            <button id="stop">STOP</button>
+            <button id="clear">CLEAR</button>
+            <button id="start">START</button>
+            <button id="reset">RESET</button>
+          </div>
+          <div class="abort">
+            <button id="abort">ABORT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <span class="iconify icon-btOverView" data-icon="raphael:temp"> </span>
+  </body>
+</html>

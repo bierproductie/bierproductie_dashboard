@@ -1,0 +1,37 @@
+.btOverView {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px 10px;
+  padding: 10px;
+  max-width: 806px;
+  min-width: 140px;
+  width: 100%;
+}
+
+.btOverView > div {
+  background-color: #D4D4D4;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 260px;
+  min-width: 100px;
+  width: 100%;
+  max-height: 130px;
+  height: 100%;
+}
+.icon-btOverView {
+  font-size: 45px;
+}
+
+.btOV-child {
+    font-size: 16px;
+}
+.btOV-child > p:last-child{
+    margin: 0;
+    font-weight: bold;
+    font-size: 28px;
+}
