@@ -27,14 +27,18 @@ header > h2 {
 
 .batch > * {
   display: flex;
-  font-size: 15px;
+  font-size: 17px;
   color: #525252;
+}
+
+#batch {
+  margin-right: 5px;
 }
 
 #batchNr {
   border-bottom: 1px solid #C4C4C4;
   box-sizing: border-box;
-  margin-right: 30px;
+  margin-right: 50px;
 }
 #batchNr::after {
   content: "▼";
@@ -44,8 +48,8 @@ header > h2 {
 }
 
 input[type=text] {
-  font-size: 12px;
-  margin-right: 0;
+  font-size: 14px;
+  margin: 17px 0 22px 0;
   color: #388DA6;
   background:transparent;
   border: none;
