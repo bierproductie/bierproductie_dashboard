@@ -2,7 +2,7 @@ import {
     setMaintain
 } from "./ui-elements/maintain.js";
 
-setMaintain(100);
+setMaintain(49);
 
 
 let time = document.getElementsByClassName("ptime")[0];
