@@ -22,9 +22,6 @@ function buttonFac(name) {
 }
 
 buttonFac('temp');
-// buttonFac('state');
-// buttonFac('productsPerMin');
-// buttonFac('amountToProduce');
 buttonFac('humidity');
 buttonFac('acceptableProducts');
 buttonFac('vibration');
