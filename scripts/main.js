@@ -1,14 +1,16 @@
-import {
-    setMaintain
-} from "./ui-elements/maintain.js";
+import * as maintain from "./ui-elements/maintain.js"
+import * as inventory from "./ui-elements/inventory.js"
 
-setMaintain(49);
+maintain.setMaintain(50);
 
 
-let time = document.getElementsByClassName("ptime")[0];
-time.addEventListener("click", () => {
-    console.log("Ale production");
-});
+let barley = new inventory.inventory("BARLEY", 10, 20);
+barley.setBar(3);
+
+new inventory.inventory("MALT", 10, 20);
+new inventory.inventory("HOPS", 15, 20);
+new inventory.inventory("WHEAT", 9, 20);
+new inventory.inventory("YEAST", 4, 20);
 
 
 function buttonFac(name) {
@@ -20,9 +22,6 @@ function buttonFac(name) {
 }
 
 buttonFac('temp');
-// buttonFac('state');
-// buttonFac('productsPerMin');
-// buttonFac('amountToProduce');
 buttonFac('humidity');
 buttonFac('acceptableProducts');
 buttonFac('vibration');
@@ -31,11 +30,11 @@ buttonFac('produced');
 
 function RemoveMarked() {
     let marked = document.getElementsByClassName('marked')[0];
-    console.log(marked.className);
     marked.classList.remove("marked");
 }
 
 setInterval(function () {
+let time = document.getElementsByClassName("ptime")[0];
     time.children[1].innerHTML = new Date()
         .toString()
         .slice(16, 25);
