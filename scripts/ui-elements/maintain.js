@@ -1,3 +1,4 @@
+import * as util from "../util.js";
 export {
     setMaintain
 };
@@ -5,8 +6,8 @@ export {
 console.log("Loading Maintains module!");
 
 function setMaintain(number) {
-    if (number > 100) {
-        throw "Number is too big. Allowed number under 100";
+    if (!util.isBetween(number, 0, 100)) {
+        throw "Maintain status: Invalid value!";
     }
 
     console.log("Maintain number: ", number);
@@ -18,9 +19,11 @@ function setMaintain(number) {
     maintainbar.children[1].style.height = number + "%";
 
 
-    if (number <= 100 && number >= 50) {} else if (number < 50 && number >= 25) {
+    if (number <= 100 && number >= 75) {
+        maintainbar.children[1].style.background = "red";
+    } else if (number < 75 && number >= 50) {
         maintainbar.children[1].style.background = "orange";
     } else {
-        maintainbar.children[1].style.background = "red";
+        maintainbar.children[1].style.background = "green";
     }
 }
