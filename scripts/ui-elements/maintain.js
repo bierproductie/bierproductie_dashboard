@@ -10,7 +10,7 @@ function setMaintain(number) {
         throw "Maintain status: Invalid value!";
     }
 
-    console.log("Maintain number: ", number);
+    console.log(setMaintain.name +": ", number);
     document.getElementById("maintain-overlay")
         .innerText = number + "%";
 

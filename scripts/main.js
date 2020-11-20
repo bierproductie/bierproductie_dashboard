@@ -33,7 +33,6 @@ buttonFac('produced');
 
 function RemoveMarked() {
     let marked = document.getElementsByClassName('marked')[0];
-    console.log(marked.className);
     marked.classList.remove("marked");
 }
 

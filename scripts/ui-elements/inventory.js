@@ -8,7 +8,6 @@ class inventory {
         if (!util.isNumber(number) || !util.isNumber(maks)) {
             throw this.constructor.name + " status: Invalid value!";
         }
-        console.log(barName+"-value");
         this.value = document.getElementById(barName+"-value");
         this.bar = document.getElementById(barName+"-bar");
         this.maks = maks;
