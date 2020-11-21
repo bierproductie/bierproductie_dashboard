@@ -6,6 +6,7 @@
     <title>Bierproductie: Info Pages</title>
     <link rel="stylesheet" href="styles/main.css"/>
     <script type="module" src="scripts/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </head>
   <body>
@@ -156,11 +157,11 @@
         <!-- graph view -->
         <div class="graphs">
           <div class="graphs-left">
-            <p>50 PRODUCTS/MIN</p>
+            <p id="graph-left">50 PRODUCTS/MIN</p>
           </div>
           <div class="graphs-right">
-            <div class="graphs-top"><p>this is top graphs</p></div>
-            <canvas id="graphs"></canvas>
+            <p id="graph-top">TEMPERATURE</p>
+            <canvas id="graph"></canvas>
           </div>
         </div>
 
