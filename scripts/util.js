@@ -1,6 +1,7 @@
 export {
     isNumber,
-    isBetween
+    isBetween,
+    loadJS
 };
 
 function isNumber(number) {
@@ -18,4 +19,11 @@ function isBetween(number, bottom, top) {
     } else {
         return true;
     }
+}
+
+function loadJS(path){
+    let newScript = document.createElement('script');
+    newScript.type = 'text/javascript';
+    newScript.src = path;
+    document.getElementsByTagName('head')[0].appendChild(newScript);
 }
