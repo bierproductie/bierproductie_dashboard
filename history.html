@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Batch History | Bierproductie</title>
     <link rel="stylesheet" href="styles/main.css"/>
-    <script src="scripts/script.js" defer></script>
+    <script type="module" src="scripts/history-main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </head>
   <body>
@@ -25,14 +26,87 @@
       <h2>Bierproductie</h2>
       <div class="batch">
         <p id="batch">BATCH</p>
-        <p id="batchNr">3425</p>
+        <div>
+          <input class="batchNr" type="text" size="4" value="3425">
+          <div class="custom-select" style="width:60px;">
+            <p id="batchNr"></p>
+            <div class="select-items select-hide">
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
     <!-- MAIN PAGE START HERE -->
     <div class="main">
       <div class="grid-container">
-        <p>Batch history needs to be implemented on this page.</p>
+
+        <!-- Left side -->
+        <div id="left-hist">
+          <ul class="histList">
+          </ul>
+        </div>
+
+        <!-- MainButtonOverView -->
+        <div class="btOverView">
+          <div class="temp marked btOV-child">
+            <span class="iconify icon-btOverView" data-icon="raphael:temp"> </span>
+            <p>TEMPERATURE</p>
+            <p>25.0</p>
+          </div>
+          <div class="state btOV-child">
+            <span class="iconify icon-btOverView" data-icon="mdi:state-machine"> </span>
+            <p>STATE</p>
+            <p>RUNNING</p>
+          </div>
+          <div class="produced btOV-child">
+            <span class="iconify icon-btOverView" data-icon="la:wine-bottle-solid"> </span>
+            <p>PRODUCED</p>
+            <p>266</p>
+          </div>
+          <div class="humidity btOV-child">
+            <span class="iconify icon-btOverView" data-icon="carbon:rain-drop"> </span>
+            <p>HUMIDITY</p>
+            <p>49.0</p>
+          </div>
+          <div class="amountToProduce btOV-child">
+            <span class="iconify icon-btOverView" data-icon="fa-solid:faucet"> </span>
+            <p>AMOUNT TO PRODUCE</p>
+            <p>6000</p>
+          </div>
+          <div class="acceptableProducts btOV-child">
+            <span class="iconify icon-btOverView" data-icon="bx:bx-check"> </span>
+            <p>ACCEPTABLE PRODUCTS</p>
+            <p>223</p>
+          </div>
+          <div class="vibration btOV-child">
+            <span class="iconify icon-btOverView" data-icon="zmdi:vibration"></span>
+            <p>VIBRATION</p>
+            <p>0.0</p>
+          </div>
+          <div class="productsPerMin btOV-child">
+            <span class="iconify icon-btOverView" data-icon="cil:speedometer"> </span>
+            <p>PRODUCTS PER MINUTE</p>
+            <p>300</p>
+          </div>
+          <div class="DefectProducts btOV-child">
+            <span class="iconify icon-btOverView" data-icon="bi:x"> </span>
+            <p>REJECTED PRODUCTS</p>
+            <p>43</p>
+          </div>
+        </div>
+
+
+        <!-- graph view -->
+        <div class="graphs maxWidthHist">
+          <div class="graphs-left">
+            <p id="graph-left">50 PRODUCTS/MIN</p>
+          </div>
+          <div class="graphs-right">
+            <p id="graph-top">TEMPERATURE</p>
+            <canvas id="graph"></canvas>
+          </div>
+        </div>
       </div>
     </div>
   </body>
