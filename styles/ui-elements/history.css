@@ -1,0 +1,50 @@
+#left-hist {
+    width: 100%;
+    max-width: 454px;
+}
+
+.histList {
+    max-height: 470px;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    overflow:hidden; 
+    overflow-y:scroll;
+}
+ul .histList {
+}
+
+.histItem::before{
+    content: "▼ ";
+    font-size: 20px;
+    color: #388DA6;
+    padding-top: 4px;
+}
+
+ul .histItem{
+    list-style-type: none;
+}
+.histItem {
+    background-color: #D4D4D4;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#right-hist {
+    width: 100%;
+    max-width: 980px;
+}
+.maxWidthHist {
+    max-width: 1300px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.histList::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.HistList {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

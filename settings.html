@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bierproductie: Info Pages</title>
+    <title>Batch Settings | Bierproductie</title>
     <link rel="stylesheet" href="styles/main.css"/>
-    <script src="scripts/script.js" defer></script>
+    <script type="module" src="scripts/settings-main.js" defer></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </head>
   <body>
@@ -25,7 +25,14 @@
       <h2>Bierproductie</h2>
       <div class="batch">
         <p id="batch">BATCH</p>
-        <p id="batchNr">3425</p>
+        <div>
+          <input class="batchNr" type="text" size="4" value="3425">
+          <div class="custom-select" style="width:60px;">
+            <p id="batchNr"></p>
+            <div class="select-items select-hide">
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
