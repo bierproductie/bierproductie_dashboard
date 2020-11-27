@@ -18,6 +18,7 @@ body {
 .grid-container {
   display:flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .grid-container > div {
