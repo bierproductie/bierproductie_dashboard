@@ -1,2 +1,2 @@
 # bierproductie_frontend
-[Bierproductie frontend]( bierproductie.github.io/dashboard/ )
+[Bierproductie frontend]( https://bierproductie.github.io/dashboard/ )
