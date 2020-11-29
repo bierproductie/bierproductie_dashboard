@@ -12,7 +12,7 @@
     padding: 10px;
     background-color: #C4C4C4;
 }
-.recipe-list {
+#recipe-list {
     max-height: 830px;
     display: block;
     margin: 0;
