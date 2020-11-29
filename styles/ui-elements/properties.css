@@ -1,0 +1,58 @@
+#props > p {
+    font-weight: 700;
+    font-size: 28px;
+    min-width: 300px;
+    margin: 0px;
+    padding: 10px;
+    background-color: #C4C4C4;
+}
+#props {
+    background-color: #D4D4D4;
+    position:relative;
+    min-height: 250px;
+}
+
+.props-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #DFDFDF;
+    margin: 10px;
+}
+
+.props-input > label {
+    font-size: 23px;
+    margin-right: 10px;
+}
+.props-input > label {
+    font-size: 23px;
+    margin-right: 10px;
+}
+
+input[type=number] {
+    width: 100%;
+    font-size: 14px;
+    background: #E6E6E6;
+    border: none;
+}
+
+.btstart {
+    padding: 10px;
+}
+.btstart > button {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    max-width: 320px;
+    max-height: 70px;
+    background-color: #E42F2F;
+    color: #000;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.btstart > button:active {
+  background-color: #EF0101;
+  transition: 0.01s;
+}
