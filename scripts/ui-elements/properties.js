@@ -2,7 +2,8 @@ document.getElementById("btstart").addEventListener("click", () => {
     let speed = document.getElementById("speed").value;
     let maxSpeed = document.getElementById("speed").max;
 
-    if (document.getElementById("speed").placeholder != "" && speed <= maxSpeed) {
+    if (document.getElementById("speed").placeholder != "" && speed <= maxSpeed &&
+        speed > 0 && document.getElementById("amount").value > 0 ) {
         console.log(
             "type: ",
             document.getElementsByClassName("marked")[0].children[0].innerHTML,
