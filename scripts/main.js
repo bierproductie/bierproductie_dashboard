@@ -19,8 +19,9 @@ new inventory.inventory("YEAST", 4, 20);
 
 
 new btn.button('humidity', "HUMIDITY");
-new btn.button('acceptableProducts', "ACCEPTABLE PRODUCTS");
 new btn.button('vibration', "VIBRATION");
-new btn.button('DefectProducts', "REJECTED PRODUCTS");
-new btn.button('produced', "PRODUCED");
 new btn.button('temp', "TEMPERATURE");
+new btn.button('state', "STATE");
+// new btn.button('DefectProducts', "REJECTED PRODUCTS");
+// new btn.button('acceptableProducts', "ACCEPTABLE PRODUCTS");
+// new btn.button('produced', "PRODUCED");
