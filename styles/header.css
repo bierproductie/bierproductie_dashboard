@@ -28,14 +28,6 @@ header > h2 {
 }
 
 /*style items (options):*/
-.select-items {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 80%;
-  left: -45px;
-  right: 40px;
-  z-index: 99;
-}
 
 .select-hide {
   display: none;
