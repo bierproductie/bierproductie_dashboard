@@ -26,9 +26,3 @@ header > h2 {
   cursor: pointer;
   user-select: none;
 }
-
-/*style items (options):*/
-
-.select-hide {
-  display: none;
-}
