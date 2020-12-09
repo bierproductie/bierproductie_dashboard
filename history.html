@@ -41,69 +41,79 @@
     <div class="main">
       <div class="grid-container">
 
+
         <!-- Left side -->
         <div id="left-hist">
           <ul class="histList">
           </ul>
         </div>
 
-        <!-- MainButtonOverView -->
-        <div class="btOverView">
-          <div class="temp marked btOV-child">
-            <span class="iconify icon-btOverView" data-icon="raphael:temp"> </span>
-            <p>TEMPERATURE</p>
-            <p>25.0</p>
-          </div>
-          <div class="state btOV-child">
-            <span class="iconify icon-btOverView" data-icon="mdi:state-machine"> </span>
-            <p>STATE</p>
-            <p>RUNNING</p>
-          </div>
-          <div class="produced btOV-child">
-            <span class="iconify icon-btOverView" data-icon="la:wine-bottle-solid"> </span>
-            <p>PRODUCED</p>
-            <p>266</p>
-          </div>
-          <div class="humidity btOV-child">
-            <span class="iconify icon-btOverView" data-icon="carbon:rain-drop"> </span>
-            <p>HUMIDITY</p>
-            <p>49.0</p>
-          </div>
-          <div class="amountToProduce btOV-child">
-            <span class="iconify icon-btOverView" data-icon="fa-solid:faucet"> </span>
-            <p>AMOUNT TO PRODUCE</p>
-            <p>6000</p>
-          </div>
-          <div class="acceptableProducts btOV-child">
-            <span class="iconify icon-btOverView" data-icon="bx:bx-check"> </span>
-            <p>ACCEPTABLE PRODUCTS</p>
-            <p>223</p>
-          </div>
-          <div class="vibration btOV-child">
-            <span class="iconify icon-btOverView" data-icon="zmdi:vibration"></span>
-            <p>VIBRATION</p>
-            <p>0.0</p>
-          </div>
-          <div class="productsPerMin btOV-child">
-            <span class="iconify icon-btOverView" data-icon="cil:speedometer"> </span>
-            <p>PRODUCTS PER MINUTE</p>
-            <p>300</p>
-          </div>
-          <div class="DefectProducts btOV-child">
-            <span class="iconify icon-btOverView" data-icon="bi:x"> </span>
-            <p>REJECTED PRODUCTS</p>
-            <p>43</p>
-          </div>
-        </div>
+        <!-- Top container -->
+        <div class="container-top">
 
+          <!-- MainButtonOverView -->
+          <div class="btOverView">
+            <div class="temp btOV-child">
+              <span class="iconify icon-btOverView" data-icon="raphael:temp"> </span>
+              <p>TEMPERATURE</p>
+            </div>
+            <div class="state btOV-child">
+              <span class="iconify icon-btOverView" data-icon="mdi:state-machine"> </span>
+              <p>STATE</p>
+            </div>
+            <div class="produced btOV-child">
+              <span class="iconify icon-btOverView" data-icon="la:wine-bottle-solid"> </span>
+              <p>PRODUCED</p>
+              <p>266</p>
+            </div>
+            <div class="humidity btOV-child">
+              <span class="iconify icon-btOverView" data-icon="carbon:rain-drop"> </span>
+              <p>HUMIDITY</p>
+            </div>
+            <div class="amountToProduce btOV-child">
+              <span class="iconify icon-btOverView" data-icon="fa-solid:faucet"> </span>
+              <p>AMOUNT TO PRODUCE</p>
+              <p>6000</p>
+            </div>
+            <div class="acceptableProducts btOV-child">
+              <span class="iconify icon-btOverView" data-icon="bx:bx-check"> </span>
+              <p>ACCEPTABLE PRODUCTS</p>
+              <p>223</p>
+            </div>
+            <div class="vibration btOV-child">
+              <span class="iconify icon-btOverView" data-icon="zmdi:vibration"></span>
+              <p>VIBRATION</p>
+            </div>
+            <div class="productsPerMin btOV-child">
+              <span class="iconify icon-btOverView" data-icon="cil:speedometer"> </span>
+              <p>PRODUCTS PER MINUTE</p>
+              <p>300</p>
+            </div>
+            <div class="DefectProducts btOV-child">
+              <span class="iconify icon-btOverView" data-icon="bi:x"> </span>
+              <p>REJECTED PRODUCTS</p>
+              <p>43</p>
+            </div>
+          </div>
+
+          <!-- OOE -->
+          <div class="oee-outer">
+            <div>
+              <div class="oee-inner">
+                <p>Overall Equipment Effectiveness</p>
+                <p>97%</p>
+              </div>
+            </div>
+          </div>
+        </div> 
 
         <!-- graph view -->
         <div class="graphs maxWidthHist">
           <div class="graphs-left">
-            <p id="graph-left">50 PRODUCTS/MIN</p>
+            <p id="graph-left"></p>
           </div>
           <div class="graphs-right">
-            <p id="graph-top">TEMPERATURE</p>
+            <p id="graph-top"></p>
             <canvas id="graph"></canvas>
           </div>
         </div>
