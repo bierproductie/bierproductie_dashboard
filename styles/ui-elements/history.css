@@ -1,50 +1,69 @@
 #left-hist {
+    max-width: 470px;
     width: 100%;
-    max-width: 454px;
 }
 
 .histList {
-    max-height: 470px;
-    display: block;
-    margin: 0;
-    padding: 10px;
-    overflow:hidden; 
     overflow-y:scroll;
+    max-height: 540px;
+    display: block;
+    padding: 10px;
+    margin: 0;
 }
-ul .histList {
-}
-
-.histItem::before{
-    content: "▼ ";
-    font-size: 20px;
-    color: #388DA6;
-    padding-top: 4px;
-}
-
+/* ul .histList { */
+/* } */
 ul .histItem{
     list-style-type: none;
 }
 .histItem {
     background-color: #D4D4D4;
-    padding: 5px;
     margin-bottom: 10px;
+    padding: 5px;
 }
 
 #right-hist {
+    max-width: 1000px;
     width: 100%;
-    max-width: 980px;
 }
-.maxWidthHist {
-    max-width: 1300px;
+.maxWidthHist{
+    max-width: 1400px;
+    max-width: 100%;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .histList::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
-
 /* Hide scrollbar for IE, Edge and Firefox */
 .HistList {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.oee-outer {
+    background-color: #FDFBF7;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.oee-outer > div {
+    background-color: #C4C4C4;
+    padding: 10px;
+    margin: 0 auto;
+}
+.oee-inner {
+    background-color: #D4D4D4;
+    padding: 10px;
+    display: flex;
+}
+
+.oee-inner > p {
+    background-color: #D4D4D4;
+    font-weight: bold;
+    font-size: 28px;
+    margin: 0 auto;
+}
+
+.oee-inner > p:first-child {
+    font-weight: 400;
 }
