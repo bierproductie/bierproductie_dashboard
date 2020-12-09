@@ -1,7 +1,7 @@
 .production-control {
     max-width: 405px;
     width: 100%;
-    background-color: #FBFDF7;
+    background-color: #FBFDF7 !important;
 }
 
 .production-control > div {
