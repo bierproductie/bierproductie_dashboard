@@ -5,7 +5,11 @@ export {
 console.log("Loading recipe module!");
 
 class recipe {
-    constructor(name, maxSpeed, recommenedSpeed){
+    constructor(name, maxSpeed, recommenedSpeed, optionName){
+        if(optionName === undefined) {
+            optionName = name;
+        }
+
         this.dSpeed = document.getElementById("speed");
         this.maxSpeed = maxSpeed;
         this.recommenedSpeed = recommenedSpeed;
@@ -21,7 +25,7 @@ class recipe {
 
         // Create top with the name
         const pTop = document.createElement("p");
-        pTop.innerText = name.toUpperCase();
+        pTop.innerText = optionName.toUpperCase();
         pTop.classList.add("recipe-top");
 
         this.li.appendChild(pTop);
