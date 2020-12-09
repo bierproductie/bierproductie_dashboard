@@ -1,8 +1,6 @@
 import * as util from "./util.js"
 import * as hist from "./ui-elements/history.js"
 
-util.loadJS("scripts/ui-elements/batch.js");
-
 // const array = [10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26];
 const array = [
     {"id": 10, "name":"ALE"},
