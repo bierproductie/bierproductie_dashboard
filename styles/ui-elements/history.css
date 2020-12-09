@@ -15,11 +15,13 @@
 ul .histItem{
     list-style-type: none;
 }
+
 .histItem {
     background-color: #D4D4D4;
     margin-bottom: 10px;
-    font-size: 28px;
+    font-size: 16px;
     padding: 5px;
+    max-height: 50px;
 }
 
 .histItem > p {
