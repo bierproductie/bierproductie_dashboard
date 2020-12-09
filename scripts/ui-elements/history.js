@@ -16,7 +16,9 @@ class history {
         // }
 
         const li = document.createElement("li");
-        li.innerText = "Batch: "+this.id+" - "+this.name;
+        const p = document.createElement("p");
+        p.innerText = "Batch: "+this.id+" - "+this.name;
+        li.appendChild(p);
         li.classList.add("histItem");
         li.addEventListener('click', () => {
             let remove = document.getElementsByClassName('marked-list');
