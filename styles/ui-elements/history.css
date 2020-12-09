@@ -18,7 +18,13 @@ ul .histItem{
 .histItem {
     background-color: #D4D4D4;
     margin-bottom: 10px;
+    min-height: 50px;
+    font-size: 28px;
     padding: 5px;
+}
+
+.histItem > p {
+    margin-left: 15px;
 }
 
 #right-hist {
