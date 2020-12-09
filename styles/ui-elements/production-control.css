@@ -34,7 +34,7 @@
 .buttons {
     background-color: #C4C4C4;
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr ;
     grid-gap: 10px;
     padding: 10px;
     min-height: 150px;
@@ -47,7 +47,7 @@
 
 .abort {
     padding: 10px;
-    max-height: 70px;
+    max-height: 68px;
 }
 .abort > button {
     width: 100%;
