@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Batch Settings | Bierproductie</title>
     <link rel="stylesheet" href="styles/main.css"/>
-    <script type="module" src="scripts/settings-main.js" defer></script>
+    <script type="module" src="scripts/start-batch-main.js" defer></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </head>
   <body>
@@ -15,8 +15,6 @@
       <span class="iconify" onclick="location.href='index.html';" data-icon="cil:touch-app" data-inline="false">
       </span>
       <span class="iconify" onclick="location.href='history.html';" data-icon="ri:history-fill" data-inline="false">
-      </span>
-      <span class="iconify marked-page" onclick="location.href='';" data-icon="carbon:settings" data-inline="false">
       </span>
     </div>
 
@@ -38,6 +36,7 @@
           </ul>
         </div>
 
+        <!-- Right side-->
         <div id="props">
           <p>
             PROPERTIES
@@ -50,13 +49,11 @@
             <label for="amount">AMOUNT:</label>
             <input id="amount" type="number" min="1">
           </div>
-
           <div class="space"></div>
-          <div class="btstart">
+          <div class="row">
+            <button id=btcancel onclick="location.href='index.html'">CANCEL</button>
             <button id="btstart">START</button>
           </div>
-        </div>
-
       </div>
     </div>
   </body>
