@@ -4,7 +4,6 @@ import * as btn from "./ui-elements/button.js"
 import * as util from "./util.js"
 
 util.loadJS("./scripts/ui-elements/production-control.js");
-util.loadJS("scripts/ui-elements/batch.js");
 
 maintain.setMaintain(50);
 
