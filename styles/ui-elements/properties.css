@@ -40,17 +40,6 @@ input[type=number] {
 .btstart {
     padding: 10px;
 }
-/* .btstart > button {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    max-width: 320px;
-    max-height: 70px;
-    background-color: #E42F2F;
-    color: #000;
-    font-size: 36px;
-    font-weight: 700;
-} */
 
 .row {
     position: absolute;
