@@ -59,10 +59,6 @@ input[type=number] {
     
 }
 
-.row > #btstart {
-    background-color: #E42F2F;
-}
-
 .btstart > button:active {
   background-color: #EF0101;
   transition: 0.01s;
