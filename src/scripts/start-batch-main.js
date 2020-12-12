@@ -8,7 +8,7 @@ fetch('https://api.bierproductie.nymann.dev/recipes/')
 .then(data => {
     console.log(data);
     data.forEach(r => {
-        if(r.name == "alcoholFree"){
+        if(r.name === "alcoholFree"){
             new recipe.recipe(r.name, r.max_speed, r.recommended_speed, 'alcohol free');
         } else{
             new recipe.recipe(r.name, r.max_speed, r.recommended_speed);
