@@ -10,6 +10,7 @@ class recipe {
             optionName = name;
         }
 
+        this.name = name;
         this.dSpeed = document.getElementById("speed");
         this.maxSpeed = maxSpeed;
         this.recommenedSpeed = recommenedSpeed;
@@ -51,6 +52,7 @@ class recipe {
     updateView(){
         this.dSpeed.placeholder = "Recommend: "+this.recommenedSpeed;
         this.dSpeed.max = this.maxSpeed;
+
         //Markeding with html
         let remove = document.getElementsByClassName('marked');
         if (remove.length > 0){
