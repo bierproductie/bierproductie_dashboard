@@ -1,0 +1,24 @@
+name: Deploy Bierproductie dashboard to registry.nymann.dev
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Publish to registry
+        uses: azure/docker-login@v1
+        with:
+          login-server: registry.nymann.dev
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASS }}
+      - name: Publish to registry
+        run: |
+          docker build --cache-from $ONBUILD -t $ONBUILD -f docker/Dockerfile .
+          docker push registry.nymann.dev/bierproductie/bierproductie_dashboard
+        env:
+            ONBUILD: registry.nymann.dev/bierproductie/bierproductie_dashboard:onbuild
+            IMAGE: registry.nymann.dev/bierproductie/bierproductie_dashboard
