@@ -142,20 +142,20 @@ function fetchGraphData(bool){
                 data.results.forEach(v => {
                     let dateWithTime = new Date(v.measurement_ts); 
                     stateArray.unshift({
-                        t: new Date(),
+                        x: new Date(),
                         y: v.state
                     });
                     humArray.unshift({
-                        t: dateWithTime,
+                        x: dateWithTime,
                         y: v.humidity
                     });
                     vibArray.unshift({
-                        't': dateWithTime,
-                        'y': v.vibration
+                        x: dateWithTime,
+                        y: v.vibration
                     });
                     tempArray.unshift({
-                        't': dateWithTime,
-                        'y': v.temperature
+                        x: dateWithTime,
+                        y: v.temperature
                     });
                 });
             })
