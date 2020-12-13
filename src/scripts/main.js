@@ -6,9 +6,12 @@ import * as util from "./util.js"
 util.loadJS("./scripts/ui-elements/production-control.js");
 
 // Production name and time
+//
 const pTime = document.getElementById("pTime");
 const pName = document.getElementById("pName");
 let batchId = 0;
+let startedDT = new Date("2020-12-13T19:02:10.565000+00:00");
+let dateTime;
 
 const btnTemp = document.getElementById("btnTemp");
 const btnState = document.getElementById("btnState");
@@ -20,10 +23,10 @@ const btnVib = document.getElementById("btnVib");
 const btnPPM = document.getElementById("btnPPM");
 const btnRP = document.getElementById("btnRP");
 
-const stateArray = []
-const tempArray = []
-const humArray = []
-const vibArray = []
+const stateArray = [];
+const tempArray = [];
+const humArray = [];
+const vibArray = [];
 
 fecthMaintainsStatus()
 fecthInventoryStatus()
@@ -35,7 +38,9 @@ fetch("https://api.bierproductie.nymann.dev/batches/latest/")
         btnPPM.innerText = data.speed;
         pName.innerText = data.recipe_id;
         btnATP.innerText = data.amount_to_produce;
-        setTimeout(fecthBtnData, 1);
+        // startDT = new Date(date.started_dt);
+        fecthBtnData();
+        fetchGraphData(false);
     });
 
 const MachineState = {
@@ -45,7 +50,7 @@ const MachineState = {
         3 : 'STARTING',
         4 : 'IDLE',
         5 : 'SUSPENDED',
-        6 : 'EXECUTE',
+        6 : 'RUNNING',
         7 : 'STOPPING',
         8 : 'ABORTING',
         9 : 'ABORTED',
@@ -86,12 +91,6 @@ const graphState = new btn.button('state', "STATE", stateArray, [0,1,2,3,4,5]);
 // new btn.button('DefectProducts', "REJECTED PRODUCTS");
 // new btn.button('acceptableProducts', "ACCEPTABLE PRODUCTS");
 // new btn.button('produced', "PRODUCED");
-//
-function fecthGraphData(){
-    humArray.push(5);
-    graphUpdater();
-}   
-
 function graphUpdater(){
     let marked = document.getElementsByClassName("marked")[0];
     if(marked !== undefined){
@@ -112,6 +111,60 @@ function graphUpdater(){
 
     }
 }
+
+function fetchGraphData(bool){
+    if(bool){
+        fetch("https://api.bierproductie.nymann.dev/data_over_time/"+batchId+"?from_dt="+encodeURIComponent(dateTime)+"&page_size=20&page=1")
+            .then(response => response.json())
+            .then(data => {
+                if(data.results !== undefined && data.results.length > 0){
+                    dateTime = data.results[0].measurement_ts;
+                    data.results.forEach(v => {
+                        let dateWithTime = new Date(v.measurement_ts); 
+                        // stateArray.y.push(v.state);
+                        // stateArray.x.push(dateWithTime);
+                        // humArray.y.push(v.humidity);
+                        // humArray.x.push(dateWithTime);
+                        // vibArray.y.push(v.vibration);
+                        // vibArray.x.push(dateWithTime);
+                        // tempArray.y.push(v.temperature);
+                        // tempArray.x.push(dateWithTime);
+                    });
+                }
+            })
+
+    } else {
+        fetch("https://api.bierproductie.nymann.dev/data_over_time/"+batchId+"?page_size=100&page=1")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                dateTime = data.results[0].measurement_ts;
+                data.results.forEach(v => {
+                    let dateWithTime = new Date(v.measurement_ts); 
+                    stateArray.unshift({
+                        'time': dateWithTime,
+                        'state': v.state
+                    });
+                    humArray.unshift({
+                        'time': dateWithTime,
+                        'state': v.humidity
+                    });
+                    vibArray.unshift({
+                        'time': dateWithTime,
+                        'state': v.vibration
+                    });
+                    tempArray.unshift({
+                        'time': dateWithTime,
+                        'state': v.temperature
+                    });
+                });
+            })
+
+    }
+    graphUpdater();
+    setTimeout(()=> { fetchGraphData(true); }, 10000);
+}
+
 
 function fecthInventoryStatus() {
     fetch("https://api.bierproductie.nymann.dev/inventory_statuses/?page_size=20&page=1")

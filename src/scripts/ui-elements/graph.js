@@ -3,7 +3,7 @@ export { graph };
 console.log("Loading Graph module!");
 
 class graph {
-    constructor(canvasName ,graphName, graphLabel, arrayX, arrayY){
+    constructor(canvasName ,graphName, graphLabel, array){
         this.graphName = graphName;
         this.label = graphLabel;
         this.ctx = document.getElementById(canvasName).getContext('2d');
@@ -13,10 +13,10 @@ class graph {
         this.graph = new Chart(this.ctx, {
             type: 'line',
             data: {
-                labels: arrayX,
+                labels: "SomeThing",
                 datasets: [{
                     label: graphName,
-                    data: arrayY,
+                    data: array,
                     fill: false,
                     backgroundColor: '#388DA6',
                     borderColor: '#388DA6',
@@ -29,13 +29,14 @@ class graph {
                         ticks: {
                             beginAtZero: true
                         }
-                    }]
+                    }],
+
                 }
             }
         });
     }
 
-    new(canvasName ,graphName, graphLabel, arrayX, arrayY){
+    new(canvasName ,graphName, graphLabel, array){
         this.graphName = graphName;
         this.label = graphLabel;
         this.ctx = document.getElementById(canvasName).getContext('2d');
@@ -45,10 +46,10 @@ class graph {
         this.graph = new Chart(this.ctx, {
             type: 'line',
             data: {
-                labels: arrayX,
+                labels: "this is true you know",
                 datasets: [{
                     label: graphName,
-                    data: arrayY,
+                    data: array,
                     fill: false,
                     backgroundColor: '#388DA6',
                     borderColor: '#388DA6',

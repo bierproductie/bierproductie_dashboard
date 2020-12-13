@@ -3,7 +3,7 @@ import * as graph from "./graph.js"
 console.log("Loading Button module!");
 
 class button {
-    constructor(name, label, ArrayX, ArrayY){
+    constructor(name, label, Array){
 
         let temp = document.getElementsByClassName(name)[0];
         this.graphView = undefined;
@@ -18,13 +18,11 @@ class button {
 
             if (this.graphView === undefined) {
                 this.graphView = new graph.graph("graph", name, label, 
-                    ArrayX, ArrayY);
-                console.log("UGGGHGFFF");
+                    Array);
             } else {
                 this.graphView.destroy();
-                console.log("RIP")
                 this.graphView.new("graph", name, label, 
-                    ArrayX, ArrayY);
+                    Array);
                 // graphView.updateView();
             }
         });
