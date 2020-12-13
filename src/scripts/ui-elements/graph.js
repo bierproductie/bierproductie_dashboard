@@ -4,6 +4,7 @@ console.log("Loading Graph module!");
 
 class graph {
     constructor(canvasName ,graphName, graphLabel, array){
+        console.log(array[3]);
         this.graphName = graphName;
         this.label = graphLabel;
         this.ctx = document.getElementById(canvasName).getContext('2d');
@@ -12,25 +13,15 @@ class graph {
         // Documentaion!: https://www.chartjs.org/docs/latest/
         this.graph = new Chart(this.ctx, {
             type: 'line',
-            data: {
-                labels: "SomeThing",
-                datasets: [{
-                    label: graphName,
-                    data: array,
-                    fill: false,
-                    backgroundColor: '#388DA6',
-                    borderColor: '#388DA6',
-                    borderWidth: 2,
-                }]
-            },
+            data: array,
             options: {
                 scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
+                    xAxes: [{
+                        type: 'time',
+                        time: {
+                            unit: 'month'
                         }
-                    }],
-
+                    }]
                 }
             }
         });
@@ -45,23 +36,12 @@ class graph {
         // Documentaion!: https://www.chartjs.org/docs/latest/
         this.graph = new Chart(this.ctx, {
             type: 'line',
-            data: {
-                labels: "this is true you know",
-                datasets: [{
-                    label: graphName,
-                    data: array,
-                    fill: false,
-                    backgroundColor: '#388DA6',
-                    borderColor: '#388DA6',
-                    borderWidth: 2,
-                }]
-            },
+            data: array,
             options: {
                 scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
+                    xAxes: [{
+                        type: 'Date',
+                        distribution: 'linear'
                     }]
                 }
             }
