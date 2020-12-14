@@ -8,6 +8,34 @@
     <script type="module" src="scripts/main.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <script>
+    function sendCommand(cmd){
+      let response = fetch('https://api.bierproductie.nymann.dev/commands/' + cmd)
+        .then(response => {
+          if(response.ok){
+            alert("Status Code 200, Successful");
+          } else {
+            alert("Request failed, please try again");
+          }
+        })
+        .catch(error => {
+          console.error("Uh oh");
+        });
+
+      fetch('http://example.com/movies.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+      console.log(response);
+      /*if(response.equals('200')){
+          console.log("Success");
+      } else {
+          console.log("Nope");
+      }*/
+  }
+  </script>
+
   </head>
   <body>
 
@@ -160,9 +188,9 @@
           </div>
           <div class="buttons">
             <button id="start" onclick="location.href='startbatch.html'">START</button>
-            <button id="stop" onclick="fetch('https://api.bierproductie.nymann.dev/commands/stop')">STOP</button>
-            <button id="clear"onclick="fetch('https://api.bierproductie.nymann.dev/commands/clear')">CLEAR</button>
-            <button id="reset"onclick="fetch('https://api.bierproductie.nymann.dev/commands/reset')">RESET</button>
+            <button id="stop" onclick="sendCommand('stop')">STOP</button>
+            <button id="clear" onclick="sendCommand('clear')">CLEAR</button>
+            <button id="reset" onclick="sendCommand('reset')">RESET</button>
           </div>
           <div class="abort">
             <button id="abort">ABORT</button>
