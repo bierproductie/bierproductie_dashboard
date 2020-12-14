@@ -24,7 +24,7 @@ class recipe {
 
         // Create top with the name
         const pTop = document.createElement("p");
-        pTop.innerText = optionName.toUpperCase();
+        pTop.innerText = optionName;
         pTop.classList.add("recipe-top");
 
         this.li.appendChild(pTop);
