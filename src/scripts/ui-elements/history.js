@@ -5,8 +5,10 @@ import * as btn from "./button.js"
 
 console.log("Loading history module!");
 
+
+
 class history {
-    constructor(id, name){
+    constructor(id, name, speed, ATP, oee){
         this.id = id;
         this.name = name;
         // {
@@ -27,35 +29,34 @@ class history {
             }
             li.classList.add("marked-list");
 
-            const stateArray = {x: [], y: []};
-            const tempArray = {x: [], y: []};
-            const humArray = {x: [], y: []};
-            const vibArray = {x: [], y: []};
+            document.getElementById("oee").innerText = oee;
+            document.getElementById("btnPPM").innerText = speed;
+            document.getElementById("btnATP").innerText = ATP;
 
-            //Fetch batch
-            fetch("https://api.bierproductie.nymann.dev/data_over_time/"+this.id+"?page_size=100&page=1")
+
+        fetch("https://api.bierproductie.nymann.dev/data_over_time/"+this.id+"?page_size=1&page=1")
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                data.results.reverse().forEach(v => {
-                    let dateWithTime = new Date(v.measurement_ts); 
-                    stateArray.x.push(dateWithTime);
-                    stateArray.y.push(v.state);
-                    humArray.x.push(dateWithTime);
-                    humArray.y.push(v.humidity);
-                    vibArray.x.push(dateWithTime);
-                    vibArray.y.push(v.vibration);
-                    tempArray.x.push(dateWithTime);
-                    tempArray.y.push(v.temperature);
-                });
-            })
+                let rejected = data.results[0].rejected;
+                let produced = data.results[0].produced;
+                document.getElementById("btnRP").innerText = rejected;
+                document.getElementById("btnProd").innerText = produced;
+                document.getElementById("btnAP").innerText = produced - rejected;
 
-            console.log(stateArray);
+            });
 
-            new btn.button('humidity', "HUMIDITY", humArray);
-            new btn.button('vibration', "VIBRATION", vibArray);
-            new btn.button('state', "STATE", stateArray);
-            new btn.button('temp', "TEMPERATURE", tempArray);
+
+            this.stateArray = {x: [], y: []};
+            this.tempArray = {x: [], y: []};
+            this.humArray = {x: [], y: []};
+            this.vibArray = {x: [], y: []};
+
+            this.fecthGraphData(1);
+
+            new btn.button('humidity', "HUMIDITY", this.humArray);
+            new btn.button('vibration', "VIBRATION", this.vibArray);
+            new btn.button('state', "STATE", this.stateArray);
+            new btn.button('temp', "TEMPERATURE", this.tempArray);
             // new btn.button('acceptableProducts', "ACCEPTABLE PRODUCTS");
             // new btn.button('DefectProducts', "REJECTED PRODUCTS");
             // new btn.button('produced', "PRODUCED");
@@ -64,24 +65,25 @@ class history {
 
     }
 
-    showTemperature(){
-    }
-
-    showHumidity(){
-    }
-
-    showVibration(){
-    }
-
-    showProduced(){
-    }
-
-    showAcceptableProducts(){
-    }
-
-    showRejectedProducts(){
-    }
-
-    showState(){
+    fecthGraphData(index){
+        fetch("https://api.bierproductie.nymann.dev/data_over_time/"+this.id+"?page_size=100&page="+index)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                data.results.reverse().forEach(v => {
+                    let dateWithTime = new Date(v.measurement_ts); 
+                    this.stateArray.x.push(dateWithTime);
+                    this.stateArray.y.push(v.state);
+                    this.humArray.x.push(dateWithTime);
+                    this.humArray.y.push(v.humidity);
+                    this.vibArray.x.push(dateWithTime);
+                    this.vibArray.y.push(v.vibration);
+                    this.tempArray.x.push(dateWithTime);
+                    this.tempArray.y.push(v.temperature);
+                });
+                if (data.pagination.more) {
+                    this.fecthGraphData(index+1)
+                }
+            })
     }
 }
