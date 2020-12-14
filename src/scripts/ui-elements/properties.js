@@ -5,7 +5,7 @@ document.getElementById("btstart").addEventListener("click", () => {
     let recipe = document.getElementsByClassName("marked")[0].children[0].innerHTML;
 
 
-    if (document.getElementById("speed").placeholder != "" && 0 < speed <= maxSpeed && amount_to_produce > 0) {
+    if (document.getElementById("speed").placeholder != "" && 0 < speed && speed <= maxSpeed && amount_to_produce > 0) {
         fetch('https://api.bierproductie.nymann.dev/batches/', {
             method: 'POST',
             body: JSON.stringify({
