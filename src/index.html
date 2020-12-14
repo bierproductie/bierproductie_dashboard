@@ -10,31 +10,17 @@
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
     <script>
-    function sendCommand(cmd){
-      let response = fetch('https://api.bierproductie.nymann.dev/commands/' + cmd)
-        .then(response => {
-          if(response.ok){
-            alert("Status Code 200, Successful");
-          } else {
-            alert("Request failed, please try again");
-          }
-        })
-        .catch(error => {
-          console.error("Uh oh");
-        });
-
-      fetch('http://example.com/movies.json')
-  .then(response => response.json())
-  .then(data => console.log(data));
-
-      console.log(response);
-      /*if(response.equals('200')){
-          console.log("Success");
-      } else {
-          console.log("Nope");
-      }*/
-  }
-  </script>
+      function sendCommand(cmd){
+        let response = fetch('https://api.bierproductie.nymann.dev/commands/' + cmd)
+          .then(response => {
+            if(response.ok){
+              alert("Status Code 200, Successful");
+            } else {
+              alert("Request failed, please try again");
+            }
+          })
+      }
+    </script>
 
   </head>
   <body>
@@ -83,8 +69,7 @@
             <p>AMOUNT TO PRODUCE</p>
             <p>6000</p>
           </div>
-          <div class="acceptableProducts btOV-child">
-            <span class="iconify icon-btOverView" data-icon="bx:bx-check"> </span>
+          <div class="acceptableProducts btOV-child"> <span class="iconify icon-btOverView" data-icon="bx:bx-check"> </span>
             <p>ACCEPTABLE PRODUCTS</p>
             <p>223</p>
           </div>
@@ -193,7 +178,7 @@
             <button id="reset" onclick="sendCommand('reset')">RESET</button>
           </div>
           <div class="abort">
-            <button id="abort">ABORT</button>
+            <button id="abort" onclick="sendCommand('abort')">ABORT</button>
           </div>
         </div>
       </div>
