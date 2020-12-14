@@ -13,7 +13,18 @@ class graph {
         // Documentaion!: https://www.chartjs.org/docs/latest/
         this.graph = new Chart(ctx, {
             type: 'line',
-            data: array,
+            data: {
+                labels: array.x,
+                datasets: [{
+                    label: graphName,
+                    data: array.y,
+                    fill: false,
+                    backgroundColor: '#388DA6',
+                    borderColor: '#388DA6',
+                    borderWidth: 2,
+                }]
+            },
+
             options: {
                 scales: {
                     xAxes: [{
@@ -34,7 +45,18 @@ class graph {
         // Documentaion!: https://www.chartjs.org/docs/latest/
         this.graph = new Chart(ctx, {
             type: 'line',
-            data: array,
+            data: {
+                labels: array.x,
+                datasets: [{
+                    label: graphName,
+                    data: array.y,
+                    fill: false,
+                    backgroundColor: '#388DA6',
+                    borderColor: '#388DA6',
+                    borderWidth: 2,
+                }]
+            },
+
             options: {
                 scales: {
                     xAxes: [{
