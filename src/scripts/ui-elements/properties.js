@@ -1,7 +1,7 @@
 document.getElementById("btstart").addEventListener("click", () => {
-    let speed = document.getElementById("speed").value;
-    let amount_to_produce = document.getElementById("amount").value;
-    let maxSpeed = document.getElementById("speed").max;
+    let speed = parseInt(document.getElementById("speed").value);
+    let amount_to_produce = parseInt(document.getElementById("amount").value);
+    let maxSpeed = parseInt(document.getElementById("speed").max);
     let recipe = document.getElementsByClassName("marked")[0].children[0].innerHTML;
 
 
