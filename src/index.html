@@ -6,7 +6,7 @@
     <title>Info Pages | Bierproductie</title>
     <link rel="stylesheet" href="styles/main.css"/>
     <script type="module" src="scripts/main.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
     <script>
@@ -47,46 +47,46 @@
           <div class="temp btOV-child">
             <span class="iconify icon-btOverView" data-icon="raphael:temp"> </span>
             <p>TEMPERATURE</p>
-            <p>25.0</p>
+            <p id="btnTemp">N/A</p>
           </div>
           <div class="state btOV-child">
             <span class="iconify icon-btOverView" data-icon="mdi:state-machine"> </span>
             <p>STATE</p>
-            <p>RUNNING</p>
+            <p id="btnState">N/A</p>
           </div>
           <div class="produced btOV-child">
             <span class="iconify icon-btOverView" data-icon="la:wine-bottle-solid"> </span>
             <p>PRODUCED</p>
-            <p>266</p>
+            <p id="btnProd">N/A</p>
           </div>
           <div class="humidity btOV-child">
             <span class="iconify icon-btOverView" data-icon="carbon:rain-drop"> </span>
             <p>HUMIDITY</p>
-            <p>49.0</p>
+            <p id="btnHum">N/A</p>
           </div>
           <div class="amountToProduce btOV-child">
             <span class="iconify icon-btOverView" data-icon="fa-solid:faucet"> </span>
             <p>AMOUNT TO PRODUCE</p>
-            <p>6000</p>
+            <p id="btnATP">N/A</p>
           </div>
           <div class="acceptableProducts btOV-child"> <span class="iconify icon-btOverView" data-icon="bx:bx-check"> </span>
             <p>ACCEPTABLE PRODUCTS</p>
-            <p>223</p>
+            <p id="btnAP">N/A</p>
           </div>
           <div class="vibration btOV-child">
             <span class="iconify icon-btOverView" data-icon="zmdi:vibration"></span>
             <p>VIBRATION</p>
-            <p>0.0</p>
+            <p id="btnVib">N/A</p>
           </div>
           <div class="productsPerMin btOV-child">
             <span class="iconify icon-btOverView" data-icon="cil:speedometer"> </span>
             <p>PRODUCTS PER MINUTE</p>
-            <p>300</p>
+            <p id="btnPPM">N/A</p>
           </div>
           <div class="DefectProducts btOV-child">
             <span class="iconify icon-btOverView" data-icon="bi:x"> </span>
             <p>REJECTED PRODUCTS</p>
-            <p>43</p>
+            <p id="btnRP">N/A</p>
           </div>
         </div>
 
@@ -168,8 +168,8 @@
         <!-- production control -->
         <div class=production-control>
           <div class="ptime">
-            <div>ALE PRODUCTION</div>
-            <div>00:11:52</div>
+            <div id="pName">DISPLAY MEEEE</div>
+            <div id="pTime"></div>
           </div>
           <div class="buttons">
             <button id="start" onclick="location.href='startbatch.html'">START</button>

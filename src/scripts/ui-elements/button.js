@@ -3,10 +3,10 @@ import * as graph from "./graph.js"
 console.log("Loading Button module!");
 
 class button {
-    constructor(name, label, func){
+    constructor(name, label, Array){
 
         let temp = document.getElementsByClassName(name)[0];
-        let graphView = undefined;
+        this.graphView = undefined;
 
         temp.addEventListener("click", () => {
             let marked = document.getElementsByClassName('marked');
@@ -16,17 +16,20 @@ class button {
             temp.classList.add("marked");
 
 
-            if (graphView === undefined) {
-                graphView = new graph.graph("graph", name, label, 
-                    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], [20,30,40,50,59,50,40,50,10,99]);
-                console.log("UGGGHGFFF");
+            if (this.graphView === undefined) {
+                this.graphView = new graph.graph("graph", name, label, 
+                    Array);
             } else {
-                graphView.destroy();
-                console.log("RIP")
-                graphView.new("graph", name, label, 
-                    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], [20,30,40,50,59,50,40,50,10,99]);
+                this.graphView.destroy();
+                this.graphView.new("graph", name, label, 
+                    Array);
                 // graphView.updateView();
             }
         });
+    }
+    update() {
+        if (this.graphView !== undefined) {
+            this.graphView.updateView();
+        }
     }
 }
