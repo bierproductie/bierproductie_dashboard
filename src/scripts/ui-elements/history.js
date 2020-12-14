@@ -26,10 +26,36 @@ class history {
                 remove[0].classList.remove("marked-list");
             }
             li.classList.add("marked-list");
-            new btn.button('humidity', "HUMIDITY");
-            new btn.button('vibration', "VIBRATION");
-            new btn.button('state', "STATE");
-            new btn.button('temp', "TEMPERATURE");
+
+            const stateArray = {x: [], y: []};
+            const tempArray = {x: [], y: []};
+            const humArray = {x: [], y: []};
+            const vibArray = {x: [], y: []};
+
+            //Fetch batch
+            fetch("https://api.bierproductie.nymann.dev/data_over_time/"+this.id+"?page_size=100&page=1")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                data.results.reverse().forEach(v => {
+                    let dateWithTime = new Date(v.measurement_ts); 
+                    stateArray.x.push(dateWithTime);
+                    stateArray.y.push(v.state);
+                    humArray.x.push(dateWithTime);
+                    humArray.y.push(v.humidity);
+                    vibArray.x.push(dateWithTime);
+                    vibArray.y.push(v.vibration);
+                    tempArray.x.push(dateWithTime);
+                    tempArray.y.push(v.temperature);
+                });
+            })
+
+            console.log(stateArray);
+
+            new btn.button('humidity', "HUMIDITY", humArray);
+            new btn.button('vibration', "VIBRATION", vibArray);
+            new btn.button('state', "STATE", stateArray);
+            new btn.button('temp', "TEMPERATURE", tempArray);
             // new btn.button('acceptableProducts', "ACCEPTABLE PRODUCTS");
             // new btn.button('DefectProducts', "REJECTED PRODUCTS");
             // new btn.button('produced', "PRODUCED");
