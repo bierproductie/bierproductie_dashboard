@@ -4,8 +4,6 @@ document.getElementById("btstart").addEventListener("click", () => {
     let maxSpeed = document.getElementById("speed").max;
     let recipe = document.getElementsByClassName("marked")[0].children[0].innerHTML;
 
-    //console.log(this.name);
-    console.log(maxSpeed);
 
     if (document.getElementById("speed").placeholder != "" && 0 < speed <= maxSpeed && amount_to_produce > 0) {
         fetch('https://api.bierproductie.nymann.dev/batches/', {
@@ -19,7 +17,7 @@ document.getElementById("btstart").addEventListener("click", () => {
             .then(response => response.json())
             .then(data => console.log(data));
 
-            location.href='index.html';
+        setTimeout(() =>{location.href='index.html'}, 10);
     } else {
         alert("Please check you have chosen a recipe and the speed is not over: " + maxSpeed);
     }
