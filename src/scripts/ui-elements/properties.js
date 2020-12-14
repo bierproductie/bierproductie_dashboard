@@ -15,9 +15,10 @@ document.getElementById("btstart").addEventListener("click", () => {
             })
         })
             .then(response => response.json())
-            .then(data => console.log(data));
-
-        setTimeout(() =>{location.href='index.html'}, 10);
+            .then(data => {
+                console.log(data);
+                location.href='index.html';
+            });
     } else {
         alert("Please check you have chosen a recipe and the speed is not over: " + maxSpeed);
     }
