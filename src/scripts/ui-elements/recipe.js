@@ -2,8 +2,6 @@ export {
     recipe,
 }
 
-console.log("Loading recipe module!");
-
 class recipe {
     constructor(name, maxSpeed, recommenedSpeed, optionName){
         if(optionName === undefined) {
