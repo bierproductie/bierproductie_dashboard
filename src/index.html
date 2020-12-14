@@ -160,9 +160,9 @@
           </div>
           <div class="buttons">
             <button id="start" onclick="location.href='startbatch.html'">START</button>
-            <button id="stop">STOP</button>
-            <button id="clear">CLEAR</button>
-            <button id="reset">RESET</button>
+            <button id="stop" onclick="fetch('https://api.bierproductie.nymann.dev/commands/stop')">STOP</button>
+            <button id="clear"onclick="fetch('https://api.bierproductie.nymann.dev/commands/clear')">CLEAR</button>
+            <button id="reset"onclick="fetch('https://api.bierproductie.nymann.dev/commands/reset')">RESET</button>
           </div>
           <div class="abort">
             <button id="abort">ABORT</button>
