@@ -7,6 +7,7 @@ util.loadJS("./scripts/ui-elements/production-control.js");
 
 // Production name and time
 //
+const updateInterval = 1000; //Miliseconds
 const pTime = document.getElementById("pTime");
 const pName = document.getElementById("pName");
 let batchId = 0;
@@ -79,7 +80,7 @@ function fecthBtnData(){
                 console.log("no entries");
             }
         });
-    setTimeout(fecthBtnData, 10000);
+    setTimeout(fecthBtnData, updateInterval);
 }
 
 
@@ -153,7 +154,7 @@ function fetchGraphData(bool){
 
     }
     graphUpdater();
-    setTimeout(()=> { fetchGraphData(true); }, 10000);
+    setTimeout(()=> { fetchGraphData(true); }, updateInterval);
 }
 
 
@@ -165,7 +166,7 @@ function fecthInventoryStatus() {
                 new inventory.inventory(v.name, v.current_value, v.max_value);
             });
         })
-    setTimeout(fecthInventoryStatus, 10000);
+    setTimeout(fecthInventoryStatus, updateInterval);
 }
 
 function fecthMaintainsStatus(){
@@ -174,7 +175,7 @@ function fecthMaintainsStatus(){
         .then(data => {
             maintain.setMaintain(data.value);
         })
-    setTimeout(fecthMaintainsStatus, 10000);
+    setTimeout(fecthMaintainsStatus, updateInterval);
 }
 
 

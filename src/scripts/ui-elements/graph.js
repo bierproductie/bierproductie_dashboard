@@ -29,6 +29,11 @@ class graph {
                 scales: {
                     xAxes: [{
                         type: 'time',
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
                     }]
                 }
             }
@@ -61,7 +66,13 @@ class graph {
                 scales: {
                     xAxes: [{
                         type: 'time',
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
                     }]
+
                 }
             }
         });
